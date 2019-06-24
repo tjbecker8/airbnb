@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/properties', require('./controllers/properties_get.js'))
+app.get('/api/filters', require('./controllers/filters_get.js'))
 
 //set up the server
 app.listen(process.env.PORT, () => {

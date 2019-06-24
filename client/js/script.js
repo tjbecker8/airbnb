@@ -27,6 +27,14 @@ window.onload = () => {
 		console.log('err', err)
 	})
 
-	
+	axios.get('/api/filters').then((res) => {
+		let filters = res.data
+		let filters_ul = document.getElementById('filter')
+		filters.forEach((f)=> {
+			filters_ul.insertAdjacentHTML('beforeEnd', `
+			<span> <a href="#">country</a> </span>
+			`)
+		})
+	})
 
 }
