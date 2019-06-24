@@ -16,6 +16,8 @@ app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, 'client/landing.html'))
 })
 
+app.get('/api/properties', require('./controllers/properties_get.js'))
+
 //set up the server
 app.listen(process.env.PORT, () => {
 	console.log(`Server listening on port ${process.env.PORT}`);
