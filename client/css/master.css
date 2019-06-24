@@ -5,33 +5,20 @@ body {
 	font-family: sans-serif;
 }
 
-#container {
-	background-color: coral;
-}
-
-#wrap {
-	background-color: green;
+#all {
 	display: grid;
-	grid-template-rows: 200px auto;
+	grid-template-rows: 150px auto;
 }
 
-#properties {
-	background-color: yellow;
-	padding-top: 200px;
-}
-
-#topNav {
-position: fixed;
-}
-
-.top {
-	position: relative;
+#topnav {
+	background-color: green;
 	padding: 20px;
-	background-color: blue;
-	width: 100%;
 }
 
-.filter {
-	background-color: purple;
-	padding: 20px;
+
+
+#toprated {
+	padding: 50px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
 }
