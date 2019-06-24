@@ -13,12 +13,27 @@ body {
 #topnav {
 	background-color: green;
 	padding: 20px;
+	
 }
 
-
+#properties {
+	padding: 50px;
+}
 
 #toprated {
 	padding: 50px;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+}
+
+#property {
+	background-color: red;
+	background-image: url();
+	background-size: auto 90%;
+	background-repeat: no-repeat;
+	border-radius: 20px;
+	position: relative;
+	min-height: 250px;
 }
