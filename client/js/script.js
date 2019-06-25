@@ -27,16 +27,16 @@ window.onload = () => {
 		console.log('err', err)
 	})
 
-	
 
-	// axios.get('/api/filters').then((res) => {
-	// 	let filters = res.data
-	// 	let filters_ul = document.getElementById('filter')
-	// 	filters.forEach((f)=> {
-	// 		filters_ul.insertAdjacentHTML('beforeEnd', `
-	// 		<span> <a href="#">country</a> </span>
-	// 		`)
-	// 	})
-	// })
+
+	axios.get('/api/cities').then((res) => {
+		let city = res.data
+		let city_ul = document.getElementById('city')
+		city.forEach((c)=> {
+			city_ul.insertAdjacentHTML('beforeEnd', `
+			<li><a href="#">${c.name}</a></li>
+			`)
+		})
+	})
 
 }
