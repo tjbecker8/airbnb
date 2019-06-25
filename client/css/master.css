@@ -4,7 +4,7 @@ html {
 }
 
 body {
-	background: grey;
+
 	margin: 0px;
 	font-family: sans-serif;
 }
@@ -18,20 +18,41 @@ p {
 	grid-template-rows: 150px auto;
 }
 
+#top {
+	display: grid;
+	grid-auto-rows: 2fr 1fr;
+}
+
+#search {
+	background-color: pink;
+}
+
+.sbox {
+	background-color: pink
+}
+
 #topnav {
 	background-color: green;
 	padding: 20px;
-	position:fixed;
+	position:relative;
 	z-index: 1;
 }
 
+
+#filter {
+	position: absolute;
+	bottom: 0px
+}
+
 #properties {
-	padding: 50px;
+	margin-top: 100px;
+	padding: 25px;
 }
 
 #toprated {
 	display: flex;
 	flex-wrap: wrap;
+
 }
 
 #property {
@@ -128,7 +149,7 @@ input{display:none}
 
 /*show the second levele menu of the selected voice*/
 input:checked ~ ul.submenu{
-  max-height:300px;
+  max-height:350px;
   transition:max-height 0.5s ease-in;
 }
 

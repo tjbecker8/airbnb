@@ -8,7 +8,7 @@ window.onload = () => {
 		properties.forEach((p) => {
 			properties_ul.insertAdjacentHTML('beforeEnd', `
 			<div id="property">
-			<div class="img" style="background-image: url(https://res.cloudinary.com/dg3lfqtcg/image/upload/v1561447428/boho-bar-restaurant_qhq2da.jpg);>
+			<div class="img" style="background-image: url(${p.image});>
 				<img src="" alt="">
 			</div>
 				<div class="type">
