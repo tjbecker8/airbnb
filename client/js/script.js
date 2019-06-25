@@ -34,10 +34,20 @@ window.onload = () => {
 		let city_ul = document.getElementById('city')
 		city.forEach((c)=> {
 			city_ul.insertAdjacentHTML('beforeEnd', `
-			<li><a href="#">${c.name}</a></li>
+			<li><a href="#" class="refine" id="${c.id}">${c.name}</a></li>
 			`)
 		})
 	})
+
+
+	document.addEventListener('click', (e)=> {
+		if (e.target.classList.contains('refine')) {
+			axios.get(`api/searchcity?name=${e.target.id}`).then((res)=> {
+
+			})
+		}
+	})
+
 
 	axios.get('/api/countries').then((res) => {
 		let country = res.data
@@ -58,5 +68,7 @@ window.onload = () => {
 			`)
 		})
 	})
+
+
 
 }
