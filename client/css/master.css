@@ -1,8 +1,16 @@
+html {
+	margin: 0px;
+	padding: 0px;
+}
+
 body {
 	background: grey;
-	padding: 20px;
 	margin: 0px;
 	font-family: sans-serif;
+}
+
+p {
+	margin: 0px;
 }
 
 #all {
@@ -14,7 +22,7 @@ body {
 	background-color: green;
 	padding: 20px;
 	position:fixed;
-
+	z-index: 1;
 }
 
 #properties {
@@ -22,22 +30,46 @@ body {
 }
 
 #toprated {
-	padding: 50px;
 	display: flex;
 	flex-wrap: wrap;
-	grid-column-gap: 20px;
-	grid-row-gap: 20px;
 }
 
 #property {
 	background-color: red;
-	background-image: url();
-	background-size: auto 90%;
-	background-repeat: no-repeat;
-	border-radius: 20px;
+	border-radius: 5px;
 	position: relative;
-	min-height: 250px;
+	width: 264px;
+	height: 303px;
+	margin: 7.5px;
 }
+
+.img {
+	/* background-image: url(https://res.cloudinary.com/dg3lfqtcg/image/upload/v1561447428/boho-bar-restaurant_qhq2da.jpg); */
+	background-size: auto 200px;
+	width: 264px;
+	height: 175px;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+	z-index: -1;
+}
+
+.type p {
+	font-size: 10px;
+}
+
+.name p {
+	font-size: 15px;
+}
+
+.price p {
+	font-size: 13px;
+}
+
+.rating p {
+	font-size: 9px;
+}
+
+
 
 
 ul#menu{

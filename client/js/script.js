@@ -8,17 +8,20 @@ window.onload = () => {
 		properties.forEach((p) => {
 			properties_ul.insertAdjacentHTML('beforeEnd', `
 			<div id="property">
+			<div class="img" style="background-image: url(https://res.cloudinary.com/dg3lfqtcg/image/upload/v1561447428/boho-bar-restaurant_qhq2da.jpg);>
+				<img src="" alt="">
+			</div>
 				<div class="type">
-					<h2>${p.city}</h2>
+					<p>${p.city}<p>
 				</div>
 				<div class="name">
-					<h2>${p.name}</h2>
+					<p>${p.name}</p>
 				</div>
 				<div class="price">
 					<p>${p.price}t</p>
 				</div>
 				<div class="rating">
-					<small>${p.rating}</small>
+					<p>${p.rating}</p>
 				</div>
 			</div>
 			`)
