@@ -39,4 +39,14 @@ window.onload = () => {
 		})
 	})
 
+	axios.get('/api/countries').then((res) => {
+		let country = res.data
+		let country_ul = document.getElementById('country')
+		country.forEach((c)=> {
+			country_ul.insertAdjacentHTML('beforeEnd', `
+			<li><a href="#">${c.name}</a></li>
+			`)
+		})
+	})
+
 }
