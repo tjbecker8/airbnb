@@ -9,16 +9,16 @@ window.onload = () => {
 			properties_ul.insertAdjacentHTML('beforeEnd', `
 			<div id="property">
 				<div class="type">
-					<h2>type - location</h2>
+					<h2>${p.city}</h2>
 				</div>
 				<div class="name">
-					<h2>name</h2>
+					<h2>${p.name}</h2>
 				</div>
 				<div class="price">
-					<p>price/night</p>
+					<p>${p.price}t</p>
 				</div>
 				<div class="rating">
-					<small>rating</small>
+					<small>${p.rating}</small>
 				</div>
 			</div>
 			`)
@@ -40,13 +40,42 @@ window.onload = () => {
 	})
 
 
-	document.addEventListener('click', (e)=> {
+	document.addEventListener('click', (e) => {
 		if (e.target.classList.contains('refine')) {
-			axios.get(`api/searchcity?name=${e.target.id}`).then((res)=> {
-
+			axios.get(`/api/searchcity?name=${e.target.id}`).then((res) => {
+				// console.log('res', res.data)
+				let prooperties = res.data
+				let properties_ui = document.getElementById('properties')
+				properties_ui.innerHTML = ''
+				if (res.data.length) {
+					prooperties.forEach((p) => {
+						properties_ui.insertAdjacentHTML('beforeEnd', `
+						<div id="property">
+							<div class="type">
+								<h2>${p.city}</h2>
+							</div>
+							<div class="name">
+								<h2>${p.name}</h2>
+							</div>
+							<div class="price">
+								<p>${p.price}t</p>
+							</div>
+							<div class="rating">
+								<small>${p.rating}</small>
+							</div>
+						</div>
+						`)
+					})
+				} else {
+					products_ui.innerHTML = 'No products found.'
+				}
+			}).catch((err) => {
+				console.log('err', err)
 			})
 		}
 	})
+
+
 
 
 	axios.get('/api/countries').then((res) => {
@@ -54,9 +83,45 @@ window.onload = () => {
 		let country_ul = document.getElementById('country')
 		country.forEach((c)=> {
 			country_ul.insertAdjacentHTML('beforeEnd', `
-			<li><a href="#">${c.name}</a></li>
+			<li><a href="#" class="refine" id="${c.id}">${c.name}</a></li>
 			`)
 		})
+	})
+
+
+	document.addEventListener('click', (e) => {
+		if (e.target.classList.contains('refine')) {
+			axios.get(`/api/searchcountries?name=${e.target.id}`).then((res) => {
+				console.log('res', res.data)
+				let prooperties = res.data
+				let properties_ui = document.getElementById('properties')
+				properties_ui.innerHTML = ''
+				if (res.data.length) {
+					prooperties.forEach((p) => {
+						properties_ui.insertAdjacentHTML('beforeEnd', `
+						<div id="property">
+							<div class="type">
+								<h2>${p.city}</h2>
+							</div>
+							<div class="name">
+								<h2>${p.name}</h2>
+							</div>
+							<div class="price">
+								<p>${p.price}t</p>
+							</div>
+							<div class="rating">
+								<small>${p.rating}</small>
+							</div>
+						</div>
+						`)
+					})
+				} else {
+					products_ui.innerHTML = 'No products found.'
+				}
+			}).catch((err) => {
+				console.log('err', err)
+			})
+		}
 	})
 
 	axios.get('/api/roomtype').then((res) => {
