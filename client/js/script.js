@@ -49,4 +49,14 @@ window.onload = () => {
 		})
 	})
 
+	axios.get('/api/roomtype').then((res) => {
+		let type = res.data
+		let type_ul = document.getElementById('type')
+		type.forEach((t)=> {
+			type_ul.insertAdjacentHTML('beforeEnd', `
+			<li><a href="#">${t.type}</a></li>
+			`)
+		})
+	})
+
 }

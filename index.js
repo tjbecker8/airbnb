@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
 app.get('/api/properties', require('./controllers/properties_get.js'))
 app.get('/api/cities', require('./controllers/city_get.js'))
 app.get('/api/countries', require('./controllers/countries_get.js'))
+app.get('/api/roomtype', require('./controllers/roomtype_get.js'))
 
 //set up the server
 app.listen(process.env.PORT, () => {
