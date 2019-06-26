@@ -23,16 +23,11 @@ p {
 	grid-auto-rows: 2fr 1fr;
 }
 
-#search {
-	background-color: pink;
-}
-
-.sbox {
-	background-color: pink
+input {
+	background-color: black;
 }
 
 #topnav {
-	background-color: green;
 	padding: 20px;
 	position:relative;
 	z-index: 1;
@@ -145,7 +140,7 @@ input:checked ~ label:after{
 }
 
 /*hide the inputs*/
-input{display:none}
+/* input{display:none} */
 
 /*show the second levele menu of the selected voice*/
 input:checked ~ ul.submenu{
