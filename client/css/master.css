@@ -116,6 +116,12 @@ img {
 	font-weight: 600;
 }
 
+.links {
+	display: flex;
+	flex-direction: row;
+	position: absolute;
+	right: 10px
+}
 
 .bar {
 	padding-top: 20px;
@@ -128,7 +134,8 @@ img {
 
 .host {
 	padding-top: 23px;
-	padding-left: 300px;
+	margin-right: 35px;
+	float: right;
 }
 
 .host span:hover {
@@ -140,7 +147,8 @@ img {
 
 .help {
 	padding-top: 23px;
-	padding-left: 35px;
+	margin-right: 35px;
+	float: right;
 }
 
 .help span:hover {
@@ -152,7 +160,8 @@ img {
 
 .sign {
 	padding-top: 23px;
-	padding-left: 35px;
+	margin-right: 35px;
+	float: right;
 }
 
 .sign span:hover {
@@ -164,7 +173,8 @@ img {
 
 .log {
 	padding-top: 23px;
-	padding-left:	35px
+	margin-right: 15px;
+	float: right;
 }
 
 .log span:hover {
@@ -210,7 +220,6 @@ img {
 }
 
 .img {
-	/* background-image: url(https://res.cloudinary.com/dg3lfqtcg/image/upload/v1561447428/boho-bar-restaurant_qhq2da.jpg); */
 	background-size: auto 200px;
 	width: 264px;
 	height: 175px;
