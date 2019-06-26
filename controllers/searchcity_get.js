@@ -2,7 +2,7 @@ const db = require('../db.js')
 
 
 module.exports = (req, res) => {
-	let query = `SELECT properties.id, properties.name, properties.price, properties.rating, properties.rooms,  cities.name AS "city"
+	let query = `SELECT properties.id, properties.name, properties.price, properties.rating, properties.rooms, properties.image, cities.name AS "city"
 FROM properties
 LEFT JOIN cities
 	ON properties.city = cities.id ` // default query = all products

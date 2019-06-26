@@ -37,21 +37,21 @@ window.onload = () => {
 		let city_ul = document.getElementById('city')
 		city.forEach((c)=> {
 			city_ul.insertAdjacentHTML('beforeEnd', `
-			<a href="#" class="refine" id="${c.id}">${c.name}</a>
+			<a href="#" class="city1" id="${c.id}">${c.name}</a>
 			`)
 		})
 	})
 
 
 	document.addEventListener('click', (e) => {
-		if (e.target.classList.contains('refine')) {
+		if (e.target.classList.contains('city1')) {
 			axios.get(`/api/searchcity?name=${e.target.id}`).then((res) => {
-				// console.log('res', res.data)
-				let prooperties = res.data
-				let properties_ui = document.getElementById('properties')
+				console.log('res', res.data)
+				let properties = res.data
+				let properties_ui = document.getElementById('toprated')
 				properties_ui.innerHTML = ''
 				if (res.data.length) {
-					prooperties.forEach((p) => {
+					properties.forEach((p) => {
 						properties_ui.insertAdjacentHTML('beforeEnd', `
 						<div id="property">
 						<div class="img" style="background-image: url(${p.image});>
@@ -89,18 +89,18 @@ window.onload = () => {
 		let country_ul = document.getElementById('country')
 		country.forEach((c)=> {
 			country_ul.insertAdjacentHTML('beforeEnd', `
-			<a href="#" class="refine" id="${c.id}">${c.name}</a>
+			<a href="#" class="cont" id="${c.id}">${c.name}</a>
 			`)
 		})
 	})
 
 
 	document.addEventListener('click', (e) => {
-		if (e.target.classList.contains('refine')) {
+		if (e.target.classList.contains('cont')) {
 			axios.get(`/api/searchcountries?name=${e.target.id}`).then((res) => {
 				console.log('res', res.data)
 				let prooperties = res.data
-				let properties_ui = document.getElementById('properties')
+				let properties_ui = document.getElementById('toprated')
 				properties_ui.innerHTML = ''
 				if (res.data.length) {
 					prooperties.forEach((p) => {
@@ -138,17 +138,17 @@ window.onload = () => {
 		let type_ul = document.getElementById('type')
 		type.forEach((t)=> {
 			type_ul.insertAdjacentHTML('beforeEnd', `
-			<a href="#" class="refine" id="${t.id}">${t.type}</a>
+			<a href="#" class="typ" id="${t.id}">${t.type}</a>
 			`)
 		})
 	})
 
 	document.addEventListener('click', (e) => {
-		if (e.target.classList.contains('refine')) {
+		if (e.target.classList.contains('typ')) {
 			axios.get(`/api/searchtype?name=${e.target.id}`).then((res) => {
 				console.log('res', res.data)
 				let prooperties = res.data
-				let properties_ui = document.getElementById('properties')
+				let properties_ui = document.getElementById('toprated')
 				properties_ui.innerHTML = ''
 				if (res.data.length) {
 					prooperties.forEach((p) => {
