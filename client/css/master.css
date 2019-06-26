@@ -277,3 +277,21 @@ img {
 	padding-top: 7px;
 	padding-bottom: 12px;
 }
+
+.xyz {
+	margin-top: 57px;
+}
+
+.xyz h2 {
+	color: #484848;
+	margin: 0;
+}
+
+.all-property {
+	margin-top: 57px;
+}
+
+.all-property h2 {
+	color: #484848;
+	margin: 0;
+}
