@@ -6,7 +6,11 @@ window.onload = () => {
 		let properties = res.data
 		let properties_ul = document.getElementById('toprated')
 		properties.forEach((p) => {
-			properties_ul.insertAdjacentHTML('beforeEnd', `
+			let star = ''
+			for (i = 1; i <= p.rating; i++) {
+				star += `<i class="fas fa-star"></i>`
+			}
+			let html = `
 			<div id="property">
 				<div class="img" style="background-image: url(${p.image});">
 					<img src="" alt="">
@@ -22,20 +26,18 @@ window.onload = () => {
 						<p>$${p.price}/night</p>
 					</div>
 					<div class="rating">
-						<p>
-							<i class="fas fa-star"></i>
-							<i class="fas fa-star"></i>
-							<i class="fas fa-star"></i>
-							<i class="fas fa-star"></i>
+						<p id="stars">
+							${star}
 							${p.rating} stars
 						</p>
 					</div>
-				</div>
-			`)
+				</div>`
+			properties_ul.insertAdjacentHTML('beforeEnd', html)
 		})
 	}).catch((err) => {
 		console.log('err', err)
 	})
+
 
 
 
