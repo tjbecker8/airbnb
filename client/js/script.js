@@ -12,7 +12,7 @@ window.onload = () => {
 				<img src="" alt="">
 			</div>
 				<div class="type">
-					<p>${p.city}<p>
+					<p>${p.type} - ${p.city}<p>
 				</div>
 				<div class="name">
 					<p>${p.name}</p>
