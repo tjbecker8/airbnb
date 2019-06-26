@@ -37,7 +37,7 @@ window.onload = () => {
 		let city_ul = document.getElementById('city')
 		city.forEach((c)=> {
 			city_ul.insertAdjacentHTML('beforeEnd', `
-			<li><a href="#" class="refine" id="${c.id}">${c.name}</a></li>
+			<a href="#" class="refine" id="${c.id}">${c.name}</a>
 			`)
 		})
 	})
@@ -54,17 +54,20 @@ window.onload = () => {
 					prooperties.forEach((p) => {
 						properties_ui.insertAdjacentHTML('beforeEnd', `
 						<div id="property">
+						<div class="img" style="background-image: url(${p.image});>
+							<img src="" alt="">
+						</div>
 							<div class="type">
-								<h2>${p.city}</h2>
+								<p>${p.city}<p>
 							</div>
 							<div class="name">
-								<h2>${p.name}</h2>
+								<p>${p.name}</p>
 							</div>
 							<div class="price">
 								<p>${p.price}t</p>
 							</div>
 							<div class="rating">
-								<small>${p.rating}</small>
+								<p>${p.rating}</p>
 							</div>
 						</div>
 						`)
@@ -86,7 +89,7 @@ window.onload = () => {
 		let country_ul = document.getElementById('country')
 		country.forEach((c)=> {
 			country_ul.insertAdjacentHTML('beforeEnd', `
-			<li><a href="#" class="refine" id="${c.id}">${c.name}</a></li>
+			<a href="#" class="refine" id="${c.id}">${c.name}</a>
 			`)
 		})
 	})
@@ -103,6 +106,9 @@ window.onload = () => {
 					prooperties.forEach((p) => {
 						properties_ui.insertAdjacentHTML('beforeEnd', `
 						<div id="property">
+						<div class="img" style="background-image: url(${p.image});>
+							<img src="" alt="">
+						</div>
 							<div class="type">
 								<h2>${p.city}</h2>
 							</div>
@@ -132,7 +138,7 @@ window.onload = () => {
 		let type_ul = document.getElementById('type')
 		type.forEach((t)=> {
 			type_ul.insertAdjacentHTML('beforeEnd', `
-			<li><a href="#" class="refine" id="${t.id}">${t.type}</a></li>
+			<a href="#" class="refine" id="${t.id}">${t.type}</a>
 			`)
 		})
 	})
@@ -148,6 +154,9 @@ window.onload = () => {
 					prooperties.forEach((p) => {
 						properties_ui.insertAdjacentHTML('beforeEnd', `
 						<div id="property">
+						<div class="img" style="background-image: url(${p.image});>
+							<img src="" alt="">
+						</div>
 							<div class="type">
 								<h2>${p.city}</h2>
 							</div>
