@@ -13,6 +13,44 @@ p {
 	margin: 0px;
 }
 
+.dropdown {
+	display: inline-block;
+}
+
+.drpbtn {
+	background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+	background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+
+
+
 #all {
 	display: grid;
 	grid-template-rows: 150px auto;
@@ -26,7 +64,7 @@ p {
 
 #search {
 	position: relative;
-	background-color: green;
+	background-color: white;
 }
 
 span {
@@ -34,7 +72,8 @@ span {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	padding-right: 15px;
-	border: 3px solid black;
+	border-radius: 5px;
+	box-shadow: 7px 7px 15px 1px rgba(115,115,115,0.5);
 	position: absolute;
 	left: 80px;
 	top: 10px;
@@ -52,7 +91,7 @@ input {
 
 i {
 	color: black;
-	font-size: 25px;
+	font-size: 22px;
 	/* position: absolute;
 	top: 35px;
 	left: 120px; */
@@ -64,6 +103,40 @@ img {
 	top: 4px;
 	left: -5px;
 }
+
+#search a {
+	text-decoration: none;
+	color: #737373;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.host {
+	position: absolute;
+	top: 23px;
+	right: 230px;
+}
+
+.help {
+	position: absolute;
+	top: 23px;
+	right: 171px;
+}
+
+.sign {
+	position: absolute;
+	top: 23px;
+	right: 89px;
+}
+
+.log {
+	position: absolute;
+	top: 23px;
+	right: 17px;
+}
+
+
+
 
 #topnav {
 	padding: 20px;
@@ -121,96 +194,4 @@ img {
 
 .rating p {
 	font-size: 9px;
-}
-
-
-
-
-ul#menu{
-  position:relative;
-  top:0;
-  width:100%;
-  height:3em;
-  margin:0;
-  padding:0 10px;
-  background:#333;
-  color:#eee;
-  box-shadow:0 -1px rgba(0,0,0,.5) inset;
-}
-
-ul#menu > li{
-  float:left;
-  list-style-type:none;
-  position:relative;
-}
-
-
- /* filter div for drop down menus */
-#filter label{
-  position:relative;
-  display:block;
-  padding:0 60px 0 12px;
-  line-height:3em;
-  transition:background 0.3s;
-  cursor:pointer;
-}
-
-#filter label:after{
-  content:"";
-  position:absolute;
-  display:block;
-  top:50%;
-  right:5px;
-  width:0;
-  height:0;
-  border-top:4px solid rgba(255,255,255,.5);
-  border-bottom:0 solid rgba(255,255,255,.5);
-  border-left:4px solid transparent;
-  border-right:4px solid transparent;
-  transition:border-bottom .1s, border-top .1s .1s;
-  }
-
-#filter label:hover,
-#filter input:checked ~ label{background:rgba(0,0,0,.3);}
-
-#filter input:checked ~ label:after{
-  border-top:0 solid rgba(255,255,255,.5);
-  border-bottom:4px solid rgba(255,255,255,.5);
-  transition:border-top .1s, border-bottom .1s .1s;
-}
-
-/*hide the inputs*/
-#filter input{display:none}
-
-/*show the second levele menu of the selected voice*/
-#filter input:checked ~ ul.submenu{
-  max-height:350px;
-  transition:max-height 0.5s ease-in;
-}
-
-/*style for the second level menu*/
-#filter ul.submenu{
-  max-height:0;
-  padding:0;
-  overflow:hidden;
-  list-style-type:none;
-  background:#444;
-  box-shadow:0 0 1px rgba(0,0,0,.3);
-  transition:max-height 0.5s ease-out;
-  position:absolute;
-  min-width:100%;
-}
-
-#filter ul.submenu li a{
-  display:block;
-  padding:12px;
-  color:#ddd;
-  text-decoration:none;
-  box-shadow:0 -1px rgba(0,0,0,.5) inset;
-  transition:background .3s;
-  white-space:nowrap;
-}
-
-#filter ul.submenu li a:hover{
-  background:rgba(0,0,0,.3);
 }
