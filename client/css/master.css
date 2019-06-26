@@ -19,12 +19,50 @@ p {
 }
 
 #top {
+	background-color: pink;
 	display: grid;
 	grid-auto-rows: 2fr 1fr;
 }
 
+#search {
+	position: relative;
+	background-color: green;
+}
+
+span {
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 15px;
+	border: 3px solid black;
+	position: absolute;
+	left: 80px;
+	top: 10px;
+}
+
 input {
-	background-color: black;
+	background-color: white;
+	height: 25px;
+	width: 383px;
+	/* position: absolute;
+	left: 130px;
+	top: 15px; */
+
+}
+
+i {
+	color: black;
+	font-size: 25px;
+	/* position: absolute;
+	top: 35px;
+	left: 120px; */
+}
+
+img {
+	height: 70px;
+	position: absolute;
+	top: 4px;
+	left: -5px;
 }
 
 #topnav {
@@ -106,7 +144,9 @@ ul#menu > li{
   position:relative;
 }
 
-label{
+
+ /* filter div for drop down menus */
+#filter label{
   position:relative;
   display:block;
   padding:0 60px 0 12px;
@@ -115,7 +155,7 @@ label{
   cursor:pointer;
 }
 
-label:after{
+#filter label:after{
   content:"";
   position:absolute;
   display:block;
@@ -130,26 +170,26 @@ label:after{
   transition:border-bottom .1s, border-top .1s .1s;
   }
 
-label:hover,
-input:checked ~ label{background:rgba(0,0,0,.3);}
+#filter label:hover,
+#filter input:checked ~ label{background:rgba(0,0,0,.3);}
 
-input:checked ~ label:after{
+#filter input:checked ~ label:after{
   border-top:0 solid rgba(255,255,255,.5);
   border-bottom:4px solid rgba(255,255,255,.5);
   transition:border-top .1s, border-bottom .1s .1s;
 }
 
 /*hide the inputs*/
-/* input{display:none} */
+#filter input{display:none}
 
 /*show the second levele menu of the selected voice*/
-input:checked ~ ul.submenu{
+#filter input:checked ~ ul.submenu{
   max-height:350px;
   transition:max-height 0.5s ease-in;
 }
 
 /*style for the second level menu*/
-ul.submenu{
+#filter ul.submenu{
   max-height:0;
   padding:0;
   overflow:hidden;
@@ -161,7 +201,7 @@ ul.submenu{
   min-width:100%;
 }
 
-ul.submenu li a{
+#filter ul.submenu li a{
   display:block;
   padding:12px;
   color:#ddd;
@@ -171,6 +211,6 @@ ul.submenu li a{
   white-space:nowrap;
 }
 
-ul.submenu li a:hover{
+#filter ul.submenu li a:hover{
   background:rgba(0,0,0,.3);
 }
