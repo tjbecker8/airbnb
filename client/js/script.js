@@ -8,22 +8,29 @@ window.onload = () => {
 		properties.forEach((p) => {
 			properties_ul.insertAdjacentHTML('beforeEnd', `
 			<div id="property">
-			<div class="img" style="background-image: url(${p.image});>
-				<img src="" alt="">
-			</div>
-				<div class="type">
-					<p>${p.type} - ${p.city}<p>
+				<div class="img" style="background-image: url(${p.image});">
+					<img src="" alt="">
 				</div>
-				<div class="name">
-					<p>${p.name}</p>
+				<div class="data">
+					<div class="type">
+						<p>${p.type} - ${p.city} </p>
+					</div>
+					<div class="name">
+						<p>${p.name}</p>
+					</div>
+					<div class="price">
+						<p>$${p.price}/night</p>
+					</div>
+					<div class="rating">
+						<p>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							${p.rating} stars
+						</p>
+					</div>
 				</div>
-				<div class="price">
-					<p>${p.price}t</p>
-				</div>
-				<div class="rating">
-					<p>${p.rating}</p>
-				</div>
-			</div>
 			`)
 		})
 	}).catch((err) => {
