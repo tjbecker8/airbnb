@@ -164,15 +164,14 @@ img {
 #toprated {
 	display: flex;
 	flex-wrap: wrap;
-
 }
 
 #property {
-	background-color: red;
+	/* border: 1px solid black; */
 	border-radius: 5px;
 	position: relative;
 	width: 264px;
-	height: 303px;
+	height: 285px;
 	margin: 7.5px;
 }
 
@@ -186,18 +185,33 @@ img {
 	z-index: -1;
 }
 
+.data {
+	display: flex;
+	flex-direction: column;
+}
+
 .type p {
-	font-size: 10px;
+	font-size: 15px;
+	color: #aaaaaa;
+	font-weight: 600;
+	padding-top: 6px;
 }
 
 .name p {
-	font-size: 15px;
+	font-size: 20px;
+	color: #484848;
+	font-weight: bold;
+	padding-top: 8px;
 }
 
 .price p {
 	font-size: 13px;
+	color: #484848;
+	padding-top: 8px;
 }
 
 .rating p {
 	font-size: 9px;
+	color: #1b8489;
+	padding-top: 8px;
 }
