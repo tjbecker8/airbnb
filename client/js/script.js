@@ -46,7 +46,7 @@ window.onload = () => {
 	document.addEventListener('click', (e) => {
 		if (e.target.classList.contains('city1')) {
 			axios.get(`/api/searchcity?name=${e.target.id}`).then((res) => {
-				console.log('res', res.data)
+				// console.log('res', res.data)
 				let properties = res.data
 				let properties_ui = document.getElementById('toprated')
 				properties_ui.innerHTML = ''
@@ -98,7 +98,7 @@ window.onload = () => {
 	document.addEventListener('click', (e) => {
 		if (e.target.classList.contains('cont')) {
 			axios.get(`/api/searchcountries?name=${e.target.id}`).then((res) => {
-				console.log('res', res.data)
+				// console.log('res', res.data)
 				let prooperties = res.data
 				let properties_ui = document.getElementById('toprated')
 				properties_ui.innerHTML = ''
@@ -110,16 +110,16 @@ window.onload = () => {
 							<img src="" alt="">
 						</div>
 							<div class="type">
-								<h2>${p.city}</h2>
+								<p>${p.city}<p>
 							</div>
 							<div class="name">
-								<h2>${p.name}</h2>
+								<p>${p.name}</p>
 							</div>
 							<div class="price">
 								<p>${p.price}t</p>
 							</div>
 							<div class="rating">
-								<small>${p.rating}</small>
+								<p>${p.rating}</p>
 							</div>
 						</div>
 						`)
@@ -146,7 +146,7 @@ window.onload = () => {
 	document.addEventListener('click', (e) => {
 		if (e.target.classList.contains('typ')) {
 			axios.get(`/api/searchtype?name=${e.target.id}`).then((res) => {
-				console.log('res', res.data)
+				// console.log('res', res.data)
 				let prooperties = res.data
 				let properties_ui = document.getElementById('toprated')
 				properties_ui.innerHTML = ''
@@ -158,16 +158,16 @@ window.onload = () => {
 							<img src="" alt="">
 						</div>
 							<div class="type">
-								<h2>${p.city}</h2>
+								<p>${p.city}<p>
 							</div>
 							<div class="name">
-								<h2>${p.name}</h2>
+								<p>${p.name}</p>
 							</div>
 							<div class="price">
 								<p>${p.price}t</p>
 							</div>
 							<div class="rating">
-								<small>${p.rating}</small>
+								<p>${p.rating}</p>
 							</div>
 						</div>
 						`)
