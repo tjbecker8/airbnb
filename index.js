@@ -27,6 +27,7 @@ app.get('/api/searchcountries', require('./controllers/searchcountries_get.js'))
 app.get('/api/searchtype', require('./controllers/searchtype_get.js'))
 app.get('/api/rooms', require('./controllers/roomnumb_get.js'))
 app.get('/api/searchrooms', require('./controllers/search_roomnum.js'))
+app.get('/api/pp', require('./controllers/price_search.js'))
 
 //set up the server
 app.listen(process.env.PORT, () => {

@@ -395,17 +395,22 @@ window.onload = () => {
 	let type_ul = document.getElementById('prices')
 	type.forEach((t)=> {
 		type_ul.insertAdjacentHTML('beforeEnd', `
-			<a href="#" class="price" class="${t}">${t}</a>
+			<a href="#" class="${t}">${t}</a>
 			`)
 	})
 
 
 
-	let url = ''
+
 	document.addEventListener('click', (e) =>{
+		let url = ''
 		if (e.target.classList.contains('$0-5')) {
-			url += ``
+			url += `/api/pp?min=0&max=5`
 		}
+		console.log(url);
+		axios.get(`${url}`).then((res) =>{
+			console.log(res.data);
+		})
 	})
 
 
