@@ -338,9 +338,10 @@ window.onload = () => {
 
 	document.addEventListener('click', (e) => {
 		if (e.target.classList.contains('room')) {
-			axios.get(`/api/searchtype?name=${e.target.id}`).then((res) => {
+			axios.get(`/api/searchrooms?name=${e.target.id}`).then((res) => {
 				// console.log('res', res.data)
 				let properties = res.data
+				console.log(properties);
 				let properties_ui = document.getElementById('properties')
 				properties_ui.innerHTML = ''
 				properties_ui.insertAdjacentHTML('beforeEnd', `<h2>Places with ${properties[0].rooms} Room(s)</h2>
@@ -389,7 +390,7 @@ window.onload = () => {
 		}
 	})
 
-	
+
 
 
 }
