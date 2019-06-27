@@ -267,13 +267,13 @@ window.onload = () => {
 		let type_ul = document.getElementById('type')
 		type.forEach((t)=> {
 			type_ul.insertAdjacentHTML('beforeEnd', `
-			<a href="#" class="type" id="${t.id}">${t.type}</a>
+			<a href="#" class="typ" id="${t.id}">${t.type}</a>
 			`)
 		})
 	})
 
 	document.addEventListener('click', (e) => {
-		if (e.target.classList.contains('type')) {
+		if (e.target.classList.contains('typ')) {
 			axios.get(`/api/searchtype?name=${e.target.id}`).then((res) => {
 				// console.log('res', res.data)
 				let properties = res.data
@@ -427,16 +427,16 @@ window.onload = () => {
 		}
 		axios.get(url).then((res) => {
 			// console.log('res', res.data)
-			let properties = res.data
+			let prices = res.data
 			// console.log(properties);
-			let properties_ui = document.getElementById('properties')
-			properties_ui.innerHTML = ''
-			properties_ui.insertAdjacentHTML('beforeEnd', `<h2>Price Sorted</h2>
+			let prices_ui = document.getElementById('properties')
+			prices_ui.innerHTML = ''
+			prices_ui.insertAdjacentHTML('beforeEnd', `<h2>Price Sorted</h2>
 			<div id ="wraper"></div>
 			`)
-			let city_ui = document.getElementById('wraper')
+			let citers_ui = document.getElementById('wraper')
 			if (res.data.length) {
-				properties.forEach((p) => {
+				prices.forEach((p) => {
 					let star = ''
 					for (i = 1; i <= p.rating; i++) {
 						star += `<i class="fas fa-star"></i>`
@@ -466,10 +466,10 @@ window.onload = () => {
 							</div>
 						</div>
 					</div>`
-					city_ui.insertAdjacentHTML('beforeEnd', html)
+					citers_ui.insertAdjacentHTML('beforeEnd', html)
 				})
 			} else {
-				products_ui.innerHTML = 'No products found.'
+				prices_ui.innerHTML = 'No products found.'
 			}
 		}).catch((err) => {
 			console.log('err', err)
