@@ -285,7 +285,7 @@ window.onload = () => {
 				let city_ui = document.getElementById('wraper')
 				if (res.data.length) {
 					properties.forEach((p) => {
-						console.log(p);
+						// console.log(p);
 						let star = ''
 						for (i = 1; i <= p.rating; i++) {
 							star += `<i class="fas fa-star"></i>`
@@ -341,7 +341,7 @@ window.onload = () => {
 			axios.get(`/api/searchrooms?name=${e.target.id}`).then((res) => {
 				// console.log('res', res.data)
 				let properties = res.data
-				console.log(properties);
+				// console.log(properties);
 				let properties_ui = document.getElementById('properties')
 				properties_ui.innerHTML = ''
 				properties_ui.insertAdjacentHTML('beforeEnd', `<h2>Places with ${properties[0].rooms} Room(s)</h2>
@@ -408,7 +408,7 @@ window.onload = () => {
 
 
 	document.addEventListener('click', (e) =>{
-		console.log(e.target.id);
+		// console.log(e.target.id);
 		let url = ''
 		if (e.target.id == 'price1') {
 			url += `/api/pp?min=0&max=5`
@@ -428,7 +428,7 @@ window.onload = () => {
 		axios.get(url).then((res) => {
 			// console.log('res', res.data)
 			let properties = res.data
-			console.log(properties);
+			// console.log(properties);
 			let properties_ui = document.getElementById('properties')
 			properties_ui.innerHTML = ''
 			properties_ui.insertAdjacentHTML('beforeEnd', `<h2>Price Sorted</h2>
