@@ -392,11 +392,11 @@ window.onload = () => {
 
 
 	let type = [
-		{id: 1, name:'$0-5'},
-		{id: 2, name:'$6-10'},
-		{id: 3, name:'$11-20'},
-		{id: 4, name:'$21-50'},
-		{id:5, name:'$51+'}]
+		{id: 'price1', name:'$0-5'},
+		{id: 'price2', name:'$6-10'},
+		{id: 'price3', name:'$11-20'},
+		{id: 'price4', name:'$21-50'},
+		{id: 'price5', name:'$51+'}]
 	let type_ul = document.getElementById('prices')
 	type.forEach((t)=> {
 		type_ul.insertAdjacentHTML('beforeEnd', `
@@ -410,19 +410,19 @@ window.onload = () => {
 	document.addEventListener('click', (e) =>{
 		console.log(e.target.id);
 		let url = ''
-		if (e.target.id == 1) {
+		if (e.target.id == 'price1') {
 			url += `/api/pp?min=0&max=5`
 		}
-		if (e.target.id == 2) {
+		if (e.target.id == 'price2') {
 			url += `/api/pp?min=6&max=10`
 		}
-		if (e.target.id == 3) {
+		if (e.target.id == 'price3') {
 			url += `/api/pp?min=11&max=20`
 		}
-		if (e.target.id == 4) {
+		if (e.target.id == 'price4') {
 			url += `/api/pp?min=21&max=50`
 		}
-		if (e.target.id == 5) {
+		if (e.target.id == 'price5') {
 			url += `/api/pp?min=51&max=1000`
 		}
 		axios.get(url).then((res) => {
