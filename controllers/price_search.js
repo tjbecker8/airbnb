@@ -12,6 +12,14 @@ LEFT JOIN proptype
 		query += `WHERE `
 	}
 	if (req.query.min && req.query.max) {
-		query += `price BETWEEN ${req.query.min} AND ${req.query.max} `
+		query += `price BETWEEN ${req.query.min} AND ${req.query.max}`
 	}
+	db.query(query, (err, result) => {
+		if (err) {
+			res.send(err)
+		} else {
+			res.send(result.rows)
+		}
+	})
+	
 }
