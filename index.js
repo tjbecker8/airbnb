@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, 'client/landing.html'))
 })
 
+
 app.get('/api/properties', require('./controllers/properties_get.js'))
 app.get('/api/cities', require('./controllers/city_get.js'))
 app.get('/api/countries', require('./controllers/countries_get.js'))
