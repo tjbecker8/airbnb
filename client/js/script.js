@@ -144,6 +144,7 @@ window.onload = () => {
 
 	document.addEventListener('click', (e) => {
 		if (e.target.classList.contains('city1')) {
+			console.log(e.target.id);
 			axios.get(`/api/searchcity?name=${e.target.id}`).then((res) => {
 				// console.log('res', res.data)
 				let properties = res.data
@@ -425,13 +426,14 @@ window.onload = () => {
 		if (e.target.id === 'price5') {
 			url += `/api/pp?min=51&max=1000`
 		}
+		// console.log(url);
 		axios.get(url).then((res) => {
 			// console.log('res', res.data)
 			let prices = res.data
 			// console.log(properties);
 			let prices_ui = document.getElementById('properties')
 			prices_ui.innerHTML = ''
-			prices_ui.insertAdjacentHTML('beforeEnd', `<h2>Price Sorted</h2>
+			prices_ui.insertAdjacentHTML('beforeEnd', `<h2>Sorted by Price</h2>
 			<div id ="wraper"></div>
 			`)
 			let citers_ui = document.getElementById('wraper')
