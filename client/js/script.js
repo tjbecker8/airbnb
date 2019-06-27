@@ -42,7 +42,7 @@ window.onload = () => {
 	//places to stay in div
 	axios.get('/api/properties').then((res) => {
 		let properties = res.data
-		let properties_ul = document.getElementById('city-xyz')
+		let properties_ul = document.getElementById('xyz')
 		properties.forEach((p) => {
 			let star = ''
 			for (i = 1; i <= p.rating; i++) {
@@ -80,7 +80,7 @@ window.onload = () => {
 	//all places to stay div
 	axios.get('/api/properties').then((res) => {
 		let properties = res.data
-		let properties_ul = document.getElementById('property-all')
+		let properties_ul = document.getElementById('property-abc')
 		properties.forEach((p) => {
 			let star = ''
 			for (i = 1; i <= p.rating; i++) {

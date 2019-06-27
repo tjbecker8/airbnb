@@ -210,15 +210,19 @@ img {
 	flex-wrap: wrap;
 }
 
-#city-xyz {
+#xyz {
 	display: flex;
 	flex-wrap: wrap;
 }
 
-#all-prop {
+#abc {
 	display: flex;
 	flex-wrap: wrap;
 }
+
+
+
+
 
 #property {
 	/* border: 1px solid black; */

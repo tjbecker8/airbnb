@@ -18,8 +18,8 @@ module.exports = (req, res) => {
 	if (req.query.rooms) {
 		query += `rooms = '${req.query.room}' `
 	}
-	
-	console.log(query);
+
+	// console.log(query);
 	db.query(query, (err, result) => {
 		if (err) {
 			res.send(err)
