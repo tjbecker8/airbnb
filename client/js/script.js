@@ -48,7 +48,44 @@ window.onload = () => {
 		axios.get(`/api/searchcity?name=${random.id}`).then((res)=>{
 			// console.log(res);
 			let properties = res.data
-			let properties_ui = document.getElementById('')
+			console.log(properties);
+			let properties_ui = document.getElementById('xyz')
+			properties_ui.insertAdjacentHTML('beforeEnd', `<h2>Places to stay in ${properties[0].city}</h2>`)
+			let city_ui = document.getElementById('city-prop')
+			console.log(city_ui);
+			properties.forEach((p)=> {
+				console.log('p', p);
+				let star = ''
+				for (i = 1; i<= p.rating; i++) {
+					star += `<i class="fas fa-star"></i>`
+				}
+				let html = `
+				<div id="property">
+					<div class="img" style="background-image: url(${p.image});">
+						<img src="" alt="">
+					</div>
+					<div class="data">
+						<div class="type">
+							<p>${p.type} - ${p.city} </p>
+						</div>
+						<div class="name">
+							<p>${p.name}</p>
+						</div>
+						<div class="price">
+							<p>$${p.price}/night</p>
+						</div>
+						<div class="rating">
+							<p id="stars">
+								${star}
+								${p.rating} stars
+							</p>
+						</div>
+					</div>`
+				// console.log(html);
+				city_ui.insertAdjacentHTML('beforeEnd', html)
+			})
+		}).catch((err) => {
+			console.log('err', err)
 		})
 	})
 
@@ -56,39 +93,41 @@ window.onload = () => {
 	//all places to stay div
 	axios.get('/api/properties').then((res) => {
 		let properties = res.data
-		let properties_ul = document.getElementById('property-abc')
+		let properties_ul = document.getElementById('properties-all')
 		properties.forEach((p) => {
 			let star = ''
 			for (i = 1; i <= p.rating; i++) {
 				star += `<i class="fas fa-star"></i>`
 			}
 			let html = `
-		<div id="property">
-			<div class="img" style="background-image: url(${p.image});">
-				<img src="" alt="">
-			</div>
-			<div class="data">
-				<div class="type">
-					<p>${p.type} - ${p.city} </p>
+			<div id="property">
+				<div class="img" style="background-image: url(${p.image});">
+					<img src="" alt="">
 				</div>
-				<div class="name">
-					<p>${p.name}</p>
-				</div>
-				<div class="price">
-					<p>$${p.price}/night</p>
-				</div>
-				<div class="rating">
-					<p id="stars">
-						${star}
-						${p.rating} stars
-					</p>
-				</div>
-			</div>`
+				<div class="data">
+					<div class="type">
+						<p>${p.type} - ${p.city} </p>
+					</div>
+					<div class="name">
+						<p>${p.name}</p>
+					</div>
+					<div class="price">
+						<p>$${p.price}/night</p>
+					</div>
+					<div class="rating">
+						<p id="stars">
+							${star}
+							${p.rating} stars
+						</p>
+					</div>
+				</div>`
 			properties_ul.insertAdjacentHTML('beforeEnd', html)
 		})
 	}).catch((err) => {
 		console.log('err', err)
 	})
+
+
 
 
 

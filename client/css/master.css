@@ -210,7 +210,12 @@ img {
 	flex-wrap: wrap;
 }
 
-#xyz {
+#city-prop {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#properties-all {
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -221,7 +226,9 @@ img {
 }
 
 
-
+#xyz h2 {
+	padding-bottom: 25px;
+}
 
 
 #property {
