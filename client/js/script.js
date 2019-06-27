@@ -267,13 +267,13 @@ window.onload = () => {
 		let type_ul = document.getElementById('type')
 		type.forEach((t)=> {
 			type_ul.insertAdjacentHTML('beforeEnd', `
-			<a href="#" class="typ" id="${t.id}">${t.type}</a>
+			<a href="#" class="type" id="${t.id}">${t.type}</a>
 			`)
 		})
 	})
 
 	document.addEventListener('click', (e) => {
-		if (e.target.classList.contains('typ')) {
+		if (e.target.classList.contains('type')) {
 			axios.get(`/api/searchtype?name=${e.target.id}`).then((res) => {
 				// console.log('res', res.data)
 				let properties = res.data
@@ -285,6 +285,7 @@ window.onload = () => {
 				let city_ui = document.getElementById('wraper')
 				if (res.data.length) {
 					properties.forEach((p) => {
+						console.log(p);
 						let star = ''
 						for (i = 1; i <= p.rating; i++) {
 							star += `<i class="fas fa-star"></i>`
