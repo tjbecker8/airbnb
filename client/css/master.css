@@ -225,10 +225,20 @@ img {
 	flex-wrap: wrap;
 }
 
+#wraper {
+	display: flex;
+	flex-wrap: wrap;
+}
 
 #xyz h2 {
 	padding-bottom: 25px;
 }
+
+#all-prop h2 {
+	padding-bottom: 25px;
+}
+
+
 
 
 #property {

@@ -48,13 +48,13 @@ window.onload = () => {
 		axios.get(`/api/searchcity?name=${random.id}`).then((res)=>{
 			// console.log(res);
 			let properties = res.data
-			console.log(properties);
+			// console.log(properties);
 			let properties_ui = document.getElementById('xyz')
 			properties_ui.insertAdjacentHTML('beforeEnd', `<h2>Places to stay in ${properties[0].city}</h2>`)
 			let city_ui = document.getElementById('city-prop')
-			console.log(city_ui);
+			// console.log(city_ui);
 			properties.forEach((p)=> {
-				console.log('p', p);
+				// console.log('p', p);
 				let star = ''
 				for (i = 1; i<= p.rating; i++) {
 					star += `<i class="fas fa-star"></i>`
@@ -147,29 +147,44 @@ window.onload = () => {
 			axios.get(`/api/searchcity?name=${e.target.id}`).then((res) => {
 				// console.log('res', res.data)
 				let properties = res.data
-				let properties_ui = document.getElementById('toprated')
+				let properties_ui = document.getElementById('properties')
 				properties_ui.innerHTML = ''
+				properties_ui.insertAdjacentHTML('beforeEnd', `<h2>Places to stay in ${properties[0].city}</h2>
+				<div id ="wraper"></div>
+				`)
+				let city_ui = document.getElementById('wraper')
 				if (res.data.length) {
 					properties.forEach((p) => {
-						properties_ui.insertAdjacentHTML('beforeEnd', `
-						<div id="property">
-						<div class="img" style="background-image: url(${p.image});>
-							<img src="" alt="">
-						</div>
-							<div class="type">
-								<p>${p.city}<p>
+						let star = ''
+						for (i = 1; i <= p.rating; i++) {
+							star += `<i class="fas fa-star"></i>`
+						}
+						let html = `
+						<div id="search-1">
+							<div id="property">
+								<div class="img" style="background-image: url(${p.image});">
+									<img src="" alt="">
+								</div>
+								<div class="data">
+									<div class="type">
+										<p>${p.type} - ${p.city} </p>
+									</div>
+									<div class="name">
+										<p>${p.name}</p>
+									</div>
+									<div class="price">
+										<p>$${p.price}/night</p>
+									</div>
+									<div class="rating">
+										<p>
+											${star}
+											${p.rating} stars
+										</p>
+									</div>
+								</div>
 							</div>
-							<div class="name">
-								<p>${p.name}</p>
-							</div>
-							<div class="price">
-								<p>${p.price}t</p>
-							</div>
-							<div class="rating">
-								<p>${p.rating}</p>
-							</div>
-						</div>
-						`)
+						</div>`
+						city_ui.insertAdjacentHTML('beforeEnd', html)
 					})
 				} else {
 					products_ui.innerHTML = 'No products found.'
@@ -198,30 +213,45 @@ window.onload = () => {
 		if (e.target.classList.contains('cont')) {
 			axios.get(`/api/searchcountries?name=${e.target.id}`).then((res) => {
 				// console.log('res', res.data)
-				let prooperties = res.data
-				let properties_ui = document.getElementById('toprated')
+				let properties = res.data
+				let properties_ui = document.getElementById('properties')
 				properties_ui.innerHTML = ''
+				properties_ui.insertAdjacentHTML('beforeEnd', `<h2>Places to stay in ${properties[0].country}</h2>
+				<div id ="wraper"></div>
+				`)
+				let city_ui = document.getElementById('wraper')
 				if (res.data.length) {
-					prooperties.forEach((p) => {
-						properties_ui.insertAdjacentHTML('beforeEnd', `
-						<div id="property">
-						<div class="img" style="background-image: url(${p.image});>
-							<img src="" alt="">
-						</div>
-							<div class="type">
-								<p>${p.city}<p>
+					properties.forEach((p) => {
+						let star = ''
+						for (i = 1; i <= p.rating; i++) {
+							star += `<i class="fas fa-star"></i>`
+						}
+						let html = `
+						<div id="search-1">
+							<div id="property">
+								<div class="img" style="background-image: url(${p.image});">
+									<img src="" alt="">
+								</div>
+								<div class="data">
+									<div class="type">
+										<p>${p.type} - ${p.city} </p>
+									</div>
+									<div class="name">
+										<p>${p.name}</p>
+									</div>
+									<div class="price">
+										<p>$${p.price}/night</p>
+									</div>
+									<div class="rating">
+										<p>
+											${star}
+											${p.rating} stars
+										</p>
+									</div>
+								</div>
 							</div>
-							<div class="name">
-								<p>${p.name}</p>
-							</div>
-							<div class="price">
-								<p>${p.price}t</p>
-							</div>
-							<div class="rating">
-								<p>${p.rating}</p>
-							</div>
-						</div>
-						`)
+						</div>`
+						city_ui.insertAdjacentHTML('beforeEnd', html)
 					})
 				} else {
 					products_ui.innerHTML = 'No products found.'
@@ -246,30 +276,45 @@ window.onload = () => {
 		if (e.target.classList.contains('typ')) {
 			axios.get(`/api/searchtype?name=${e.target.id}`).then((res) => {
 				// console.log('res', res.data)
-				let prooperties = res.data
-				let properties_ui = document.getElementById('toprated')
+				let properties = res.data
+				let properties_ui = document.getElementById('properties')
 				properties_ui.innerHTML = ''
+				properties_ui.insertAdjacentHTML('beforeEnd', `<h2>${properties[0].type}'s</h2>
+				<div id ="wraper"></div>
+				`)
+				let city_ui = document.getElementById('wraper')
 				if (res.data.length) {
-					prooperties.forEach((p) => {
-						properties_ui.insertAdjacentHTML('beforeEnd', `
-						<div id="property">
-						<div class="img" style="background-image: url(${p.image});>
-							<img src="" alt="">
-						</div>
-							<div class="type">
-								<p>${p.city}<p>
+					properties.forEach((p) => {
+						let star = ''
+						for (i = 1; i <= p.rating; i++) {
+							star += `<i class="fas fa-star"></i>`
+						}
+						let html = `
+						<div id="search-1">
+							<div id="property">
+								<div class="img" style="background-image: url(${p.image});">
+									<img src="" alt="">
+								</div>
+								<div class="data">
+									<div class="type">
+										<p>${p.type} - ${p.city} </p>
+									</div>
+									<div class="name">
+										<p>${p.name}</p>
+									</div>
+									<div class="price">
+										<p>$${p.price}/night</p>
+									</div>
+									<div class="rating">
+										<p>
+											${star}
+											${p.rating} stars
+										</p>
+									</div>
+								</div>
 							</div>
-							<div class="name">
-								<p>${p.name}</p>
-							</div>
-							<div class="price">
-								<p>${p.price}t</p>
-							</div>
-							<div class="rating">
-								<p>${p.rating}</p>
-							</div>
-						</div>
-						`)
+						</div>`
+						city_ui.insertAdjacentHTML('beforeEnd', html)
 					})
 				} else {
 					products_ui.innerHTML = 'No products found.'
@@ -280,6 +325,68 @@ window.onload = () => {
 		}
 	})
 
+	axios.get('/api/rooms').then((res) => {
+		let type = res.data
+		let type_ul = document.getElementById('rooms')
+		type.forEach((t)=> {
+			type_ul.insertAdjacentHTML('beforeEnd', `
+			<a href="#" class="room" id="${t.id}">${t.rooms}</a>
+			`)
+		})
+	})
+
+	document.addEventListener('click', (e) => {
+		if (e.target.classList.contains('room')) {
+			axios.get(`/api/searchtype?name=${e.target.id}`).then((res) => {
+				// console.log('res', res.data)
+				let properties = res.data
+				let properties_ui = document.getElementById('properties')
+				properties_ui.innerHTML = ''
+				properties_ui.insertAdjacentHTML('beforeEnd', `<h2>Places with ${properties[0].rooms} Room(s)</h2>
+				<div id ="wraper"></div>
+				`)
+				let city_ui = document.getElementById('wraper')
+				if (res.data.length) {
+					properties.forEach((p) => {
+						let star = ''
+						for (i = 1; i <= p.rating; i++) {
+							star += `<i class="fas fa-star"></i>`
+						}
+						let html = `
+						<div id="search-1">
+							<div id="property">
+								<div class="img" style="background-image: url(${p.image});">
+									<img src="" alt="">
+								</div>
+								<div class="data">
+									<div class="type">
+										<p>${p.type} - ${p.city} </p>
+									</div>
+									<div class="name">
+										<p>${p.name}</p>
+									</div>
+									<div class="price">
+										<p>$${p.price}/night</p>
+									</div>
+									<div class="rating">
+										<p>
+											${star}
+											${p.rating} stars
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>`
+						city_ui.insertAdjacentHTML('beforeEnd', html)
+					})
+				} else {
+					products_ui.innerHTML = 'No products found.'
+				}
+			}).catch((err) => {
+				console.log('err', err)
+			})
+		}
+	})
 
 
 }
