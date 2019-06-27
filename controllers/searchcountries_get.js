@@ -16,7 +16,7 @@ LEFT JOIN cities
 	if (req.query.name) {
 		query += `countries.id = ${req.query.name} `
 	}
-	console.log(query);
+	// console.log(query);
 	db.query(query, (err, result) => {
 		if (err) {
 			res.send(err)
