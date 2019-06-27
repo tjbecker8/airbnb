@@ -391,11 +391,16 @@ window.onload = () => {
 	})
 
 
-	let type = ['$0-5','$6-10','$11-20','$21-50','$51+']
+	let type = [
+		{id: 1, name:'$0-5'},
+		{id: 2, name:'$6-10'},
+		{id: 3, name:'$11-20'},
+		{id: 4, name:'$21-50'},
+		{id:5, name:'$51+'}]
 	let type_ul = document.getElementById('prices')
 	type.forEach((t)=> {
 		type_ul.insertAdjacentHTML('beforeEnd', `
-			<a href="#" class="${t}">${t}</a>
+			<a href="#" id="${t.id}">${t.name}</a>
 			`)
 	})
 
@@ -403,13 +408,71 @@ window.onload = () => {
 
 
 	document.addEventListener('click', (e) =>{
+		console.log(e.target.id);
 		let url = ''
-		if (e.target.classList.contains('$0-5')) {
+		if (e.target.id == 1) {
 			url += `/api/pp?min=0&max=5`
 		}
-		console.log(url);
-		axios.get(`${url}`).then((res) =>{
-			console.log(res.data);
+		if (e.target.id == 2) {
+			url += `/api/pp?min=6&max=10`
+		}
+		if (e.target.id == 3) {
+			url += `/api/pp?min=11&max=20`
+		}
+		if (e.target.id == 4) {
+			url += `/api/pp?min=21&max=50`
+		}
+		if (e.target.id == 5) {
+			url += `/api/pp?min=51&max=1000`
+		}
+		axios.get(url).then((res) => {
+			// console.log('res', res.data)
+			let properties = res.data
+			console.log(properties);
+			let properties_ui = document.getElementById('properties')
+			properties_ui.innerHTML = ''
+			properties_ui.insertAdjacentHTML('beforeEnd', `<h2>Price Sorted</h2>
+			<div id ="wraper"></div>
+			`)
+			let city_ui = document.getElementById('wraper')
+			if (res.data.length) {
+				properties.forEach((p) => {
+					let star = ''
+					for (i = 1; i <= p.rating; i++) {
+						star += `<i class="fas fa-star"></i>`
+					}
+					let html = `
+					<div id="search-1">
+						<div id="property">
+							<div class="img" style="background-image: url(${p.image});">
+								<img src="" alt="">
+							</div>
+							<div class="data">
+								<div class="type">
+									<p>${p.type} - ${p.city} </p>
+								</div>
+								<div class="name">
+									<p>${p.name}</p>
+								</div>
+								<div class="price">
+									<p>$${p.price}/night</p>
+								</div>
+								<div class="rating">
+									<p>
+										${star}
+										${p.rating} stars
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>`
+					city_ui.insertAdjacentHTML('beforeEnd', html)
+				})
+			} else {
+				products_ui.innerHTML = 'No products found.'
+			}
+		}).catch((err) => {
+			console.log('err', err)
 		})
 	})
 
