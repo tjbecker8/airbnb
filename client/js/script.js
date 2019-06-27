@@ -391,6 +391,22 @@ window.onload = () => {
 	})
 
 
+	let type = ['$0-5','$6-10','$11-20','$21-50','$51+']
+	let type_ul = document.getElementById('prices')
+	type.forEach((t)=> {
+		type_ul.insertAdjacentHTML('beforeEnd', `
+			<a href="#" class="price" class="${t}">${t}</a>
+			`)
+	})
+
+
+
+	let url = ''
+	document.addEventListener('click', (e) =>{
+		if (e.target.classList.contains('$0-5')) {
+			url += ``
+		}
+	})
 
 
 }
