@@ -7,7 +7,7 @@ window.onload = () => {
 		let city_ul = document.getElementById('cities-ol')
 		city.forEach((c)=> {
 			city_ul.insertAdjacentHTML('beforeEnd', `
-			<li>${c.name}</li>
+			<li>${c.id} - ${c.name}</li>
 			`)
 		})
 	})
@@ -18,7 +18,7 @@ window.onload = () => {
 		let country_ul = document.getElementById('count-ol')
 		country.forEach((c)=> {
 			country_ul.insertAdjacentHTML('beforeEnd', `
-			<li>${c.name}</li>
+			<li>${c.id} - ${c.name}</li>
 			`)
 		})
 	})
@@ -28,7 +28,7 @@ window.onload = () => {
 		let type_ul = document.getElementById('type-ol')
 		type.forEach((t)=> {
 			type_ul.insertAdjacentHTML('beforeEnd', `
-			<li>${t.type}</li>
+			<li>${t.id} - ${t.type}</li>
 			`)
 		})
 	})
