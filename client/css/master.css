@@ -64,15 +64,18 @@ p {
 	background-color: white;
 	display: grid;
 	grid-auto-rows: 2fr 1fr;
-	position: fixed;
-	top: 0;
-	width: 100%;
+
 }
 
 #search {
 	background-color: white;
 	display: flex;
 	flex-direction: row;
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+	background-color: white;
+	height: 82px;
 }
 
 .bar span {
@@ -195,6 +198,10 @@ img {
 	z-index: 1;
 	border-top: 1px solid rgb(228, 228, 228);
 	border-bottom: 1px solid rgb(228, 228, 228);
+	position: fixed;
+	width: 100%;
+	top: 82px;
+	background-color: white;
 }
 
 
@@ -206,7 +213,6 @@ img {
 #properties {
 	padding: 25px;
 	margin-left: 75px;
-	margin-top: 250px;
 }
 
 #toprated {
