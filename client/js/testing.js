@@ -1,19 +1,19 @@
 document.addEventListener('click', (e) =>{
-	// console.log(e.target.id);
+	console.log(e.target);
 	let url = ''
-	if (e.target.id === 'price1') {
+	if (e.target.id == 'price1') {
 		url += `/api/pp?min=0&max=5`
 	}
-	if (e.target.id === 'price2') {
+	if (e.target.id == 'price2') {
 		url += `/api/pp?min=6&max=10`
 	}
-	if (e.target.id === 'price3') {
+	if (e.target.id == 'price3') {
 		url += `/api/pp?min=11&max=20`
 	}
-	if (e.target.id === 'price4') {
+	if (e.target.id == 'price4') {
 		url += `/api/pp?min=21&max=50`
 	}
-	if (e.target.id === 'price5') {
+	if (e.target.id == 'price5') {
 		url += `/api/pp?min=51&max=1000`
 	}
 	// console.log(url);
@@ -28,7 +28,7 @@ document.addEventListener('click', (e) =>{
 		`)
 		let citers_ui = document.getElementById('wraper')
 		if (res.data.length) {
-			console.log(res.data.length);
+			// console.log(res.data.length);
 			prices.forEach((p) => {
 				let star = ''
 				for (i = 1; i <= p.rating; i++) {
