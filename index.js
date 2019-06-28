@@ -2,7 +2,12 @@
 
 const express = require('express')
 const path = require('path')
+const bodyParser = require('body-parser')
+
 const app = express()
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
 
 const dp = require('./db')
 
@@ -26,6 +31,7 @@ app.get('/api/cities', require('./controllers/city_get.js'))
 app.get('/api/countries', require('./controllers/countries_get.js'))
 app.get('/api/roomtype', require('./controllers/roomtype_get.js'))
 app.get('/api/search', require('./controllers/serch_get.js'))
+app.push('/api/search', require('./controllers/properties_create.js'))
 app.get('/api/searchcity', require('./controllers/searchcity_get.js'))
 app.get('/api/searchcountries', require('./controllers/searchcountries_get.js'))
 app.get('/api/searchtype', require('./controllers/searchtype_get.js'))
