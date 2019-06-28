@@ -64,6 +64,9 @@ p {
 	background-color: white;
 	display: grid;
 	grid-auto-rows: 2fr 1fr;
+	position: fixed;
+	top: 0;
+	width: 100%;
 }
 
 #search {
@@ -203,6 +206,7 @@ img {
 #properties {
 	padding: 25px;
 	margin-left: 75px;
+	margin-top: 250px;
 }
 
 #toprated {
