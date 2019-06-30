@@ -27,12 +27,12 @@ app.get('/admin', (req,res) => {
 
 
 app.get('/api/properties', require('./controllers/properties_get.js'))
-app.get('/api/cities', require('./controllers/city_get.js'))
+app.get('/api/cities', require('./controllers/cities_get.js'))
 app.get('/api/countries', require('./controllers/countries_get.js'))
 app.get('/api/roomtype', require('./controllers/roomtype_get.js'))
 app.get('/api/search', require('./controllers/properties_get.js'))
 app.post('/api/search', require('./controllers/properties_create.js'))
-app.get('/api/searchcity', require('./controllers/searchcity_get.js'))
+app.get('/api/searchcity', require('./controllers/searchcities_get.js'))
 app.get('/api/searchcountries', require('./controllers/searchcountries_get.js'))
 app.get('/api/searchtype', require('./controllers/searchtype_get.js'))
 app.get('/api/rooms', require('./controllers/roomnumb_get.js'))
